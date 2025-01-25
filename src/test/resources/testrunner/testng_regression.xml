@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="API Regression Suite" verbose="3">
+
+	<listeners>
+		<listener class-name="com.aq.api.listeners.ExtentReportListener"></listener>
+	</listeners>
+	<test name="Create User Test">
+		<classes>
+			<class name="com.qa.api.tests.CreateUserTest" />
+		</classes>
+	</test>
+	<test name="Get User Test">
+		<classes>
+			<class name="com.qa.api.tests.GetUserTest" />
+		</classes>
+	</test>
+	<test name="Update User Test">
+		<classes>
+			<class name="com.qa.api.tests.UpdateUserTest" />
+		</classes>
+	</test>
+	<test name="Partial Update User Test">
+		<classes>
+			<class name="com.qa.api.tests.PatchUserTest" />
+		</classes>
+	</test>
+	<test name="Delete User Test">
+		<classes>
+			<class name="com.qa.api.tests.DeleteUserTest" />
+		</classes>
+	</test>
+	<test name="Request Response API Test">
+		<classes>
+			<class name="com.qa.reqres.api.tests.ReqResTest" />
+		</classes>
+	</test>
+	<test name="Contacts API Test">
+		<classes>
+			<class name="com.qa.contacts.api.tests.ContactsAPITest"></class>
+		</classes>
+	</test>
+	<test name="Products API Test">
+		<classes>
+			<class name="com.qa.products.api.tests.ProductAPITest"></class>
+		</classes>
+	</test>
+	<test name="Amadeus API Test">
+		<classes>
+			<class name="com.qa.amadeus.api.tests.AmadeusAPITest"></class>
+		</classes>
+	</test>
+</suite>
