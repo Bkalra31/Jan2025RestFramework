@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.api.base.BaseTest;
@@ -18,14 +19,25 @@ import com.qa.api.utils.StringUtility;
 
 public class UpdateUserTest extends BaseTest {
 	
-	@Test
-	public void UpdateUserWithBuilderTest()
+	@DataProvider
+	public Object[][] getUserData()
+	{
+		return new Object[][]
+		{
+	      {"Naveen", "male", "inactive", "NaveenLabs", "active"},
+	      {"Bhushan", "male", "active", "BhushanLabs", "inactive"},
+	      {"Rekha", "female", "active", "RekhaLabs", "inactive"}
+		};
+	}
+	
+	@Test(dataProvider="getUserData")
+	public void UpdateUserWithBuilderTest(String name, String gender, String status, String updateName, String updatedStatus)
 	{
 		User user = User.builder()
-				        .name("apiAutomation")
+				        .name(name)
 				        .email(StringUtility.getRandomEmailId())
-				        .gender("male")
-				        .status("active")
+				        .gender(gender)
+				        .status(status)
 				        .build();
 		
 		Response response = restClient.post(BASE_URL_GOREST, "/public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
@@ -45,7 +57,8 @@ public class UpdateUserTest extends BaseTest {
 		
 		
 		//update the user details using setter
-		user.setName("restAPI");
+		user.setName(updateName);
+		user.setStatus(updatedStatus);
 		user.setEmail(StringUtility.getRandomEmailId());
 		System.out.println("new name is = "+user.getName());
 		System.out.println("new email is = "+user.getEmail());

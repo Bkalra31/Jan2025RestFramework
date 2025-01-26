@@ -1,8 +1,11 @@
 package com.qa.api.base;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import com.qa.api.client.RestClient;
+import com.qa.api.mocking.WireMockSetup;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
@@ -35,12 +38,23 @@ public class BaseTest {
 
 	protected RestClient restClient;
 	
+	@BeforeSuite
+	public void setupReport()
+	{
+		RestAssured.filters(new AllureRestAssured());
+	}
 	
 	@BeforeTest 
 	public void setup()
 	{
-		RestAssured.filters(new AllureRestAssured());
 		restClient = new RestClient();
+		WireMockSetup.createWireMockServer();
+	}
+	
+	@AfterTest
+	public void stopMockServer()
+	{
+		WireMockSetup.stopWireMockServer();
 	}
 	
 	

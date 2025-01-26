@@ -4,7 +4,7 @@
 <suite name="API Regression Suite" verbose="3">
 
 	<listeners>
-		<listener class-name="com.aq.api.listeners.ExtentReportListener"></listener>
+		<listener class-name="com.qa.api.listeners.ExtentReportListener"></listener>
 	</listeners>
 	<test name="Create User Test">
 		<classes>

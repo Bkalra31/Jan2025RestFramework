@@ -1,4 +1,4 @@
-package com.aq.api.listeners;
+package com.qa.api.listeners;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,6 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-
 
 public class ExtentReportListener implements ITestListener {
 
