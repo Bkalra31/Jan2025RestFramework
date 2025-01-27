@@ -51,4 +51,14 @@
 			<class name="com.qa.amadeus.api.tests.AmadeusAPITest"></class>
 		</classes>
 	</test>
+	<test name="Mocking API Test">
+		<classes>
+			<class name="com.qa.mocking.api.tests.APIMockGetProductTest"></class>
+		</classes>
+	</test>
+	<test name="Schema API Test">
+		<classes>
+			<class name="com.qa.schemavalidation.api.tests.ProductAPISchemaTest"></class>
+		</classes>
+	</test>
 </suite>
