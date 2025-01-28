@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="API Sanity Suite" verbose="3">
+
+	<listeners>
+		<listener class-name="com.qa.api.listeners.ExtentReportListener"></listener>
+	</listeners>
+	<test name="Create User Test">
+		<classes>
+			<class name="com.qa.api.tests.CreateUserTest" />
+		</classes>
+	</test>
+	<test name="Request Response API Test">
+		<classes>
+			<class name="com.qa.reqres.api.tests.ReqResTest" />
+		</classes>
+	</test>
+	<test name="Products API Test">
+		<classes>
+			<class name="com.qa.products.api.tests.ProductAPITest"></class>
+		</classes>
+	</test>
+	<test name="Mocking API Test">
+		<classes>
+			<class name="com.qa.mocking.api.tests.APIMockGetProductTest"></class>
+		</classes>
+	</test>
+	<test name="Schema API Test">
+		<classes>
+			<class name="com.qa.schemavalidation.api.tests.ProductAPISchemaTest"></class>
+		</classes>
+	</test>
+</suite>
