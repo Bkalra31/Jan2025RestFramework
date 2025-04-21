@@ -47,6 +47,7 @@
 			<version>7.10.2</version>
 		</dependency>
 
+		<!-- Allure Reports -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-rest-assured</artifactId>
