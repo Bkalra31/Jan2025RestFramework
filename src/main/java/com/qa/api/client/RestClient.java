@@ -19,7 +19,9 @@ import io.restassured.specification.ResponseSpecification;
 import static io.restassured.RestAssured.expect;
 
 public class RestClient {
-	
+	/**
+	 * Storing Responses to avoid code duplication
+	 */
 	private ResponseSpecification response200 = expect().statusCode(200);
 	private ResponseSpecification response200or201 = expect().statusCode(anyOf(equalTo(200),equalTo(201)));
 	private ResponseSpecification response201 = expect().statusCode(201);
